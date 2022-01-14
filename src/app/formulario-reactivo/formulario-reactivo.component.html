@@ -3,15 +3,15 @@
     <h1 class="title">Contact - Reactivo</h1>
 
     <div class="column is-full">
-      <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)" novalidate>
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit(formulario)" novalidate>
         <div class="control">
           <label class="label">Username</label>
-          <input type="text" name="user" ngModel #user="ngModel" required>
+          <input formControlName="name">
         </div>
 
         <div class="control">
           <label class="label">Email</label>
-          <input type="email" name="email" ngModel #email="ngModel" required>
+          <input formControlName="email">
         </div>
 
 
