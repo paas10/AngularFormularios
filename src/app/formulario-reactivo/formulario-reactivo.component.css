@@ -7,3 +7,7 @@ form {
 .control {
   margin: 28px 0;
 }
+
+.error {
+  color: red;
+}

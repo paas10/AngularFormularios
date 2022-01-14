@@ -7,11 +7,13 @@
         <div class="control">
           <label class="label">Username</label>
           <input formControlName="name">
+          <div class="error" *ngIf="formulario.get('name')?.hasError('required')">Please provide a valid name.</div>
         </div>
 
         <div class="control">
           <label class="label">Email</label>
           <input formControlName="email">
+          <div class="error" *ngIf="formulario.get('email')?.hasError('required')">Please provide a valid email.</div>
         </div>
 
 
