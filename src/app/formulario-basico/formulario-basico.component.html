@@ -3,9 +3,16 @@
     <h1 class="title">Contact</h1>
 
     <div class="column is-full">
-      <form action=""></form>
+      <form #formulario="ngForm">
+        <div class="control">
+          <label class="label">Username</label>
+          <input type="text" name="user" required ngModel #user="ngModel">
+        </div>
+      </form>
     </div>
   </section>
+
+  <p>{{ formulario.value | json }}</p>
 
   <section></section>
 </div>
