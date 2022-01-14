@@ -3,25 +3,26 @@
     <h1 class="title">Contact</h1>
 
     <div class="column is-full">
-      <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+      <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)" novalidate>
         <div class="control">
           <label class="label">Username</label>
-          <input type="text" name="user" required ngModel #user="ngModel">
+          <input type="text" name="user" ngModel #user="ngModel" required>
         </div>
 
         <div class="control">
           <label class="label">Email</label>
-          <input type="email" name="email" required ngModel #email="ngModel">
+          <input type="email" name="email" ngModel #email="ngModel" required>
         </div>
 
 
-        <input type="submit">
+        <input type="submit" [disabled]="!formulario.valid">
 
       </form>
     </div>
   </section>
 
-  <p>{{ formulario.value | json }}</p>
+  <p>{{ formulario.value | json }}</p><br>
+  <p>{{ formulario.valid }}</p>
 
   <section></section>
 </div>
