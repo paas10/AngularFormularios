@@ -12,4 +12,8 @@ export class FormularioBasicoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(datos: any) {
+    console.log(datos.value)
+  }
+
 }
