@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -12,8 +12,8 @@ export class FormularioReactivoComponent implements OnInit {
   
   constructor( private fb: FormBuilder ) {
     this.formulario = this.fb.group({
-      name: 'Pablo',
-      email: 'pablo@hotmail.com'
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(8)]],
+      email: ['', [Validators.required]]
     })
   }
 
